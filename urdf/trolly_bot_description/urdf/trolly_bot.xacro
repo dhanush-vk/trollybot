@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+<robot name="trolly_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find trolly_bot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find trolly_bot_description)/urdf/trolly_bot.trans" />
+<xacro:include filename="$(find trolly_bot_description)/urdf/trolly_bot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.07499999999999997 -0.02499999999999998 0.024999999999999994" rpy="0 0 0"/>
+    <mass value="14.31666017642561"/>
+    <inertia ixx="0.119405" iyy="0.253599" izz="0.349154" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_3_1">
+  <inertial>
+    <origin xyz="1.2961853812498703e-14 0.014999999999999986 -7.632783294297951e-17" rpy="0 0 0"/>
+    <mass value="0.7012034802812414"/>
+    <inertia ixx="0.00149" iyy="0.002875" izz="0.00149" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.245 -0.13 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.245 -0.13 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_4_1">
+  <inertial>
+    <origin xyz="1.3114509478384662e-14 0.014999999999999986 -6.938893903907228e-17" rpy="0 0 0"/>
+    <mass value="0.7012034802812414"/>
+    <inertia ixx="0.00149" iyy="0.002875" izz="0.00149" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.095 -0.13 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.095 -0.13 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_1_1">
+  <inertial>
+    <origin xyz="-1.3183898417423734e-14 -0.01499999999999993 9.020562075079397e-17" rpy="0 0 0"/>
+    <mass value="0.7012034802812414"/>
+    <inertia ixx="0.00149" iyy="0.002875" izz="0.00149" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.245 0.18 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.245 0.18 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_2_1">
+  <inertial>
+    <origin xyz="-1.301736496372996e-14 -0.01499999999999993 1.0061396160665481e-16" rpy="0 0 0"/>
+    <mass value="0.7012034802812414"/>
+    <inertia ixx="0.00149" iyy="0.002875" izz="0.00149" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.095 0.18 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.095 0.18 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ultrasonic_1">
+  <inertial>
+    <origin xyz="-0.007500000000000034 4.163336342344337e-17 2.0816681711721685e-17" rpy="0 0 0"/>
+    <mass value="0.012719999999999999"/>
+    <inertia ixx="2e-06" iyy="1e-06" izz="2e-06" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.15 0.025 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/ultrasonic_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.15 0.025 -0.025" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/ultrasonic_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="ir_1">
+  <inertial>
+    <origin xyz="0.04000000000000001 1.3877787807814457e-17 0.020000000000000007" rpy="0 0 0"/>
+    <mass value="0.0074199999999999995"/>
+    <inertia ixx="0.0" iyy="1e-06" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.175 0.025 0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/ir_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.175 0.025 0.05" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://trolly_bot_description/meshes/ir_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 1" type="continuous">
+  <origin xyz="0.245 0.13 0.025" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_3_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Revolute 2" type="continuous">
+  <origin xyz="-0.095 0.13 0.025" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_4_1"/>
+  <axis xyz="0.0 1.0 -0.0"/>
+</joint>
+
+<joint name="Revolute 3" type="continuous">
+  <origin xyz="0.245 -0.18 0.025" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_1_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 4" type="continuous">
+  <origin xyz="-0.095 -0.18 0.025" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_2_1"/>
+  <axis xyz="-0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 5" type="fixed">
+  <origin xyz="-0.15 -0.025 0.025" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="ultrasonic_1"/>
+</joint>
+
+<joint name="Rigid 6" type="fixed">
+  <origin xyz="-0.175 -0.025 -0.05" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="ir_1"/>
+</joint>
+
+</robot>
